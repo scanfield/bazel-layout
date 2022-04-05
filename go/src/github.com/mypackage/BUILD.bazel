@@ -1,0 +1,11 @@
+filegroup(
+    name = "all_files",
+    testonly = True,
+    srcs = [
+        "BUILD.bazel",
+        "go.mod",
+        "//go/src/github.com/mypackage/bar:all_files",
+        "//go/src/github.com/mypackage/baz:all_files",
+    ],
+    visibility = ["//visibility:public"],
+)
