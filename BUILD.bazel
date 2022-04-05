@@ -1,10 +1,7 @@
-filegroup(
-    name = "all_files",
-    testonly = True,
-    srcs = [
-        "BUILD.bazel",
-        "WORKSPACE",
-        "//go:all_files",
-    ],
-    visibility = ["//visibility:public"],
-)
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+# gazelle:proto disable_global
+# gazelle:prefix github.com/mypackage
+# gazelle2:external static
+
+gazelle(name = "gazelle")
